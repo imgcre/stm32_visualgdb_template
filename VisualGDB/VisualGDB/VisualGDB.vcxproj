@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{4393EC98-2629-467B-9C42-49D57C0DDE93}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="VisualGDBPackageDefinitions">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
+    <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
+    <BSP_VERSION>2020.01</BSP_VERSION>
+  </PropertyGroup>
+  <ImportGroup Label="VisualGDBFindComponents">
+    <Import Project="$(LOCALAPPDATA)\VisualGDB\FindComponents.props" />
+  </ImportGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeIncludeSearchPath>.;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\arm-none-eabi\thumb\v7-m\nofp;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\backward;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include-fixed;$(TOOLCHAIN_ROOT)\arm-none-eabi\include;..\..\Core\Inc;..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include;..\..\Drivers\STM32F1xx_HAL_Driver\Inc;..\..\Middlewares\Third_Party\FreeRTOS\Source\include;..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM3;..\..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;..\..\Drivers\STM32F1xx_HAL_Driver\Src;..\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2;..\..\Drivers\CMSIS\Include;..\..\App\Inc;..\..\Utilities\Inc;..\..\BSP\Inc;..\..\OS\Inc;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(BSP_ROOT)\stm32_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)VisualGDB-Debug.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeIncludeSearchPath>.;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\arm-none-eabi\thumb\v7-m\nofp;$(TOOLCHAIN_ROOT)\arm-none-eabi\include\c++\9.2.1\backward;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include;$(TOOLCHAIN_ROOT)\lib\gcc\arm-none-eabi\9.2.1\include-fixed;$(TOOLCHAIN_ROOT)\arm-none-eabi\include;..\..\Core\Inc;..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include;..\..\Drivers\STM32F1xx_HAL_Driver\Inc;..\..\Middlewares\Third_Party\FreeRTOS\Source\include;..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM3;..\..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy;..\..\Drivers\STM32F1xx_HAL_Driver\Src;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(BSP_ROOT)\stm32_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)"  "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)VisualGDB-Release.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ClCompile Include="..\..\App\Src\task_default.cpp" />
+    <ClCompile Include="..\..\App\Src\task_test.cpp" />
+    <ClCompile Include="..\..\BSP\Src\led.cpp" />
+    <ClCompile Include="..\..\Core\Src\freertos.c" />
+    <ClCompile Include="..\..\Core\Src\stm32f1xx_it.c" />
+    <ClCompile Include="..\..\Core\Src\stm32f1xx_hal_msp.c" />
+    <ClCompile Include="..\..\Core\Src\stm32f1xx_hal_timebase_tim.c" />
+    <ClCompile Include="..\..\Core\Src\main.c" />
+    <ClCompile Include="..\..\Core\Src\system_stm32f1xx.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\croutine.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\list.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\queue.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\tasks.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\timers.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c" />
+    <ClCompile Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM3\port.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c" />
+    <ClInclude Include="..\..\OS\Inc\async.hpp" />
+    <ClInclude Include="..\..\OS\Inc\async_base.hpp" />
+    <ClInclude Include="..\..\OS\Inc\future.hpp" />
+    <ClInclude Include="..\..\Utilities\Inc\singleton.hpp" />
+    <None Include="stm32.mak" />
+    <ClCompile Include="$(BSP_ROOT)\STM32F1xxxx\StartupFiles\startup_stm32f103xb.c" />
+    <ClInclude Include="..\..\App\Inc\task_default.hpp" />
+    <ClInclude Include="..\..\App\Inc\task_test.hpp" />
+    <ClInclude Include="..\..\BSP\Inc\led.hpp" />
+    <ClInclude Include="..\..\Core\Inc\FreeRTOSConfig.h" />
+    <ClInclude Include="..\..\Core\Inc\stm32f1xx_it.h" />
+    <ClInclude Include="..\..\Core\Inc\stm32f1xx_hal_conf.h" />
+    <ClInclude Include="..\..\Core\Inc\main.h" />
+    <ClInclude Include="..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h" />
+    <ClInclude Include="..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\croutine.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\message_buffer.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_prototypes.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\stack_macros.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\StackMacros.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\stream_buffer.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h" />
+    <ClInclude Include="..\..\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM3\portmacro.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h" />
+    <ClInclude Include="..\..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h" />
+    <ClCompile Include="..\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c" />
+    <None Include="Makefile" />
+    <None Include="debug.mak" />
+    <None Include="release.mak" />
+    <None Include="VisualGDB-Debug.vgdbsettings" />
+    <None Include="VisualGDB-Release.vgdbsettings" />
+    <None Include="stm32.xml" />
+  </ItemGroup>
+</Project>
